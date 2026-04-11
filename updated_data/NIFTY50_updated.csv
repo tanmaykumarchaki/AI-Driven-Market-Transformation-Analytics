@@ -1,3 +1,4 @@
+Date,Close,High,Low,Open,Volume,Return,Log_returns,Volatility,Volume_change,Volume_group,Volume_moving_average,RSI,RSI_group
 2010-02-17,4914.0,4929.7,4857.6,4858.65,0.0,0.012,0.011924704368882228,0.012,,Low,0.0,54.075,Medium
 2010-02-18,4887.75,4922.05,4873.7,4915.1,0.0,-0.005,-0.005356199200524958,0.012,,Low,0.0,51.35,Medium
 2010-02-19,4844.9,4887.3,4805.55,4887.3,0.0,-0.009,-0.008805469603618544,0.012,,Low,0.0,47.641,Medium
