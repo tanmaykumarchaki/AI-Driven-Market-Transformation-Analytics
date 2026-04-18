@@ -225,4 +225,49 @@ In conclusion, this project stands out due to its clarity of objective, methodol
                     </dev>
 
 """, unsafe_allow_html=True)
-        
+
+st.title("Analyzed Datasets and Visualisation")
+
+button1 , button2 , button3, button4, button5 , button6 = st.columns(6)
+
+with button1:
+    if st.button("TESLA"):
+        st.session_state.active_section = 'TESLA'
+
+        if st.session_state.active_section == "TESLA":
+            st.subheader("High-Low-Open-Close")
+            with open("tesla.txt", "r", encoding="utf-8") as file:
+              tesla = file.read()
+            st.markdown("""
+<div style="
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 18px;
+">
+{tesla}
+</div>
+""", unsafe_allow_html=True)
+
+
+    
+with button2:
+    if st.button("APPLE"):
+        st.session_state.active_section = 'APPLE'
+
+with button3:
+    if st.button("NIFTY 50"):
+        st.session_state.active_section = 'NIFTY 50'
+
+with button4:
+    if st.button("SENSEX"):
+        st.session_state.active_section = 'SENSEX'
+
+with button5:
+    if st.button("S&P 500"):
+        st.session_state.active_section =  'S&P 500'
+
+with button6:
+    if st.button("DashBoard"):
+       st.session_state.active_section = 'DashBoard'
