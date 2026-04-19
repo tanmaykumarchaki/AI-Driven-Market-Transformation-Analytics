@@ -1,4 +1,4 @@
-"""Tesla Stock Analysis Documentation (2010–2024)
+Tesla Stock Analysis Documentation (2010–2024)
 Introduction
 
 This report analyzes the stock price behavior of Tesla using four key indicators:
@@ -159,4 +159,4 @@ Increased competition in the global electric vehicle market
 Pricing pressures and margin adjustments
 Expansion into AI, automation, and energy sectors
 
-These factors suggest a transition toward a more mature yet competitive growth phase."""
+These factors suggest a transition toward a more mature yet competitive growth phase.

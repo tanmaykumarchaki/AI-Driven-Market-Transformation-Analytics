@@ -233,24 +233,6 @@ button1 , button2 , button3, button4, button5 , button6 = st.columns(6)
 with button1:
     if st.button("TESLA"):
         st.session_state.active_section = 'TESLA'
-
-        if st.session_state.active_section == "TESLA":
-            st.subheader("High-Low-Open-Close")
-            with open("tesla.txt", "r", encoding="utf-8") as file:
-              tesla = file.read()
-            st.markdown("""
-<div style="
-    width: 100%;
-    margin: auto;
-    text-align: center;
-    line-height: 1.7;
-    font-size: 18px;
-">
-{tesla}
-</div>
-""", unsafe_allow_html=True)
-
-
     
 with button2:
     if st.button("APPLE"):
@@ -271,3 +253,27 @@ with button5:
 with button6:
     if st.button("DashBoard"):
        st.session_state.active_section = 'DashBoard'
+
+
+def render_content():
+
+    if st.session_state.active_section == 'TESLA':
+        st.title("TESLA inc. Analysis")
+        st.write("Here goes the analysis of TESLA inc. dataset")
+
+        with open('tesla.txt', 'r', encoding='utf-8', errors = 'ignore') as file:
+            content = file.read()
+
+            st.markdown(
+                f"""
+                <div style =
+                "max-width: 600px;
+                 margin: auto;
+                 text-align: left;
+                 line-height: 1.7;
+                 font-size: 18px;">
+                 {content} </div>
+            """, unsafe_allow_html=True)
+
+
+render_content()
