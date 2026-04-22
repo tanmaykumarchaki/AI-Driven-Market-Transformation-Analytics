@@ -1,4 +1,5 @@
 import streamlit as st
+import os 
 #page configuration
 
 st.set_page_config(
@@ -181,10 +182,13 @@ In conclusion, this project stands out due to its clarity of objective, methodol
         st.title("What does the Project Serve ?")
         st.markdown("""
             <dev style = "
-                max-width: 600px;
-                margin: auto;
+                max-width: 700px;
+                padding: 20px;
+                margin: 20px auto;
                 text-align: center;
-                line-height: 1.5;"
+                line-height: 1.8;
+                border-radius: 10px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);"
                 >
                     
             
@@ -230,6 +234,9 @@ st.title("Analyzed Datasets and Visualisation")
 
 button1 , button2 , button3, button4, button5 , button6 = st.columns(6)
 
+if "active_section" not in st.session_state:
+    st.session_state.active_section = None
+
 with button1:
     if st.button("TESLA"):
         st.session_state.active_section = 'TESLA'
@@ -261,19 +268,34 @@ def render_content():
         st.title("TESLA inc. Analysis")
         st.write("Here goes the analysis of TESLA inc. dataset")
 
-        with open('tesla.txt', 'r', encoding='utf-8', errors = 'ignore') as file:
-            content = file.read()
 
-            st.markdown(
-                f"""
-                <div style =
-                "max-width: 600px;
-                 margin: auto;
-                 text-align: left;
-                 line-height: 1.7;
-                 font-size: 18px;">
-                 {content} </div>
-            """, unsafe_allow_html=True)
+        if os.path.exists('tesla.txt'):
+            with open('tesla.txt', 'r', encoding='utf-8', errors = 'ignore') as file:
+                content = file.read()
+
+                st.markdown(
+                    f"""
+                    <div style =
+                    "max-width: 600px;
+                    margin: auto;
+                    text-align: left;
+                    line-height: 1.7;
+                    font-size: 18px;">
+                    {content} </div>
+                """, unsafe_allow_html=True)
+
+        else:
+            st.error("file not found !")
+
+        if os.path.exists('Tesla_Viz/output.png'):
+            st.image('Tesla_Viz/output.png', caption='Tesla Inc. Visualization')
+
+        else:
+            st.error("Image unable to load!")
+
+        
+
+            
 
 
 render_content()

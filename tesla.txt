@@ -4,8 +4,11 @@ Introduction
 This report analyzes the stock price behavior of Tesla using four key indicators:
 
 -Closing Price
+
 -Opening Price
+
 -High Price
+
 -Low Price
 
 The objective is to identify structural trends, volatility patterns, the impact of macroeconomic events-especially the COVID-19 pandemic-and derive predictive as well as prescriptive insights.
